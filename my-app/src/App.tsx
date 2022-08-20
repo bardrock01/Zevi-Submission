@@ -1,7 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import "./App.scss";
 
 function App() {
+  const [query, setQuery] = useState("");
+  const [boolChildWindow, setboolChildWindow] = useState(false);
+  console.log(boolChildWindow);
   return (
     <div className="App">
       <div className="main">
@@ -13,7 +17,19 @@ function App() {
           />
         </div>
         <div className="SearchBar">
-          <input type="text" placeholder="Search" className="search"></input>
+          <input
+            type="text"
+            placeholder="Search"
+            className="search"
+            onClick={() => setboolChildWindow(!boolChildWindow)}
+          ></input>
+          {
+            boolChildWindow 
+            ? <div className="OverlayFather">
+            <div className="OverlayDiv">hello</div>
+           </div> : null
+          }
+          
         </div>
       </div>
     </div>
