@@ -8,7 +8,7 @@ function App() {
       
         <div className="main">
           <div className="ZeviName">
-            <h1>Zevi</h1>
+            <img src="/my-app/src/assets/img/zevi.png" className="ZeviImageTag" alt=""/>
           </div>
           <div className="SearchBar">
             <input type= "text" placeholder="Search" className="search">
