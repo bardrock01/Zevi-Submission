@@ -7,11 +7,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="main">
-          <div className="ImageContainer"
-            style={{ backgroundImage: "url(/image.png)" }}
-          ></div>
-          <div className="">
-
+          <div className="SearchBar">
+            <input type= "text" placeholder="Search" className="search">
+            </input>
           </div>
         </div>
       </header>
