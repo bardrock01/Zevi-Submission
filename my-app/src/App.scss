@@ -23,7 +23,7 @@ body {
 }
 .search {
   padding: 1.4%;
-  width: 45%;
+  width: 30%;
   border-color: white;
   border-radius: 10px;
   font-size: large;
@@ -43,5 +43,21 @@ body {
     width: 45%;
     background-color: white ;
     border-color: black;
-    margin : 10px
+    margin : 10px;
+    //Added shadow sizing
+    -webkit-box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
+-moz-box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
+box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
+}
+.TrendingImageContainer{
+    display: flex;
+    flex-direction: column;
+    width: 110px;
+    height: 160px;
+    
+}
+.OverlayDiv{
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
 }

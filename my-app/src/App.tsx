@@ -1,11 +1,61 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
+import { faker } from "@faker-js/faker";
+
+type FakerDataType = {
+  trendingQueries: string[];
+  trendingProducts: TrendingProducts[];
+};
+type TrendingProducts = {
+  name: string;
+  imgUrl: string;
+};
 
 function App() {
   const [query, setQuery] = useState("");
   const [boolChildWindow, setboolChildWindow] = useState(false);
-  console.log(boolChildWindow);
+  const [fakeUrl, setFakeUrl] = useState("");
+
+  const [fakerData, setFakerData] = useState<FakerDataType>({
+    trendingProducts: [],
+    trendingQueries: [],
+  });
+
+  const generateFakerData = () => {
+    let newFakerData: any = {};
+    const TrendingQueries: string[] = [];
+
+    const SIZE_OF_TRENDING_QUERIES = 5;
+
+    for (let i = 0; i < SIZE_OF_TRENDING_QUERIES; i++)
+      TrendingQueries.push(faker.commerce.productName());
+
+    newFakerData.trendingQueries = TrendingQueries;
+
+    const TrendingProducts = [];
+
+    for (let i = 0; i < 5; i++) {
+      TrendingProducts.push({
+        imgUrl: faker.image.fashion(100, 150, true),
+        name: faker.commerce.productName(),
+        isFavourite: false,
+      });
+    }
+
+    newFakerData.trendingProducts = TrendingProducts;
+
+    setFakerData(newFakerData);
+  };
+
+  useEffect(() => {
+    generateFakerData();
+  }, []);
+
+  // const fakerData = Faker();
+  // console.log(boolChildWindow);
+  console.log(fakerData);
+
   return (
     <div className="App">
       <div className="main">
@@ -23,13 +73,22 @@ function App() {
             className="search"
             onClick={() => setboolChildWindow(!boolChildWindow)}
           ></input>
-          {
-            boolChildWindow 
-            ? <div className="OverlayFather">
-            <div className="OverlayDiv">hello</div>
-           </div> : null
-          }
-          
+          {boolChildWindow ? (
+            <div className="OverlayFather">
+              <div className="OverlayDiv">
+                {fakerData.trendingProducts.map((ele, index) => {
+                  return (
+                    <div className="TrendingImageContainer">
+                      <div className="ImageProductNameContainer">
+                        <img src={ele.imgUrl} className="Images" alt="Hello" />
+                        <h3>{ele.name}</h3>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
