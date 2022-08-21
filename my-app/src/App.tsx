@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./App.scss";
 import { faker } from "@faker-js/faker";
+import AppLogo from "./components/AppLogo";
+
 
 type FakerDataType = {
   trendingQueries: string[];
@@ -16,7 +18,6 @@ function App() {
   const [query, setQuery] = useState("");
   const [boolChildWindow, setboolChildWindow] = useState(false);
   const [fakeUrl, setFakeUrl] = useState("");
-
   const [fakerData, setFakerData] = useState<FakerDataType>({
     trendingProducts: [],
     trendingQueries: [],
@@ -51,27 +52,26 @@ function App() {
   useEffect(() => {
     generateFakerData();
   }, []);
+  
 
   // const fakerData = Faker();
   // console.log(boolChildWindow);
-  console.log(fakerData);
-
+  // console.log(fakerData);
+  console.log(query);
   return (
     <div className="App">
       <div className="main">
         <div className="ZeviName">
-          <img
-            src="/my-app/src/assets/img/zevi.png"
-            className="ZeviImageTag"
-            alt="Zevi"
-          />
+          <AppLogo/>
         </div>
         <div className="SearchBar">
           <input
             type="text"
             placeholder="Search"
             className="search"
-            onClick={() => setboolChildWindow(!boolChildWindow)}
+            onClick={() => setboolChildWindow(!boolChildWindow)}//Activating the trending div
+            onChange ={ (e) => setQuery(e.target.value) }//Taking the input query
+            
           ></input>
           {boolChildWindow && (
             <div className="OverlayFather">
@@ -80,7 +80,7 @@ function App() {
                 <div className="trending-products-container">
                   {fakerData.trendingProducts.map((element, index) => (
                     <div key={index}>
-                      <img src={element.imgUrl} className="ProductName" alt="No data Recieved" />
+                      <img src={element.imgUrl} className="ProductName"  />
                       <div className="ProductName">{element.name}</div>
                     </div>
                   ))}
@@ -103,25 +103,17 @@ function App() {
                     <div className="TrendingQueriesStyle">
                       {fakerData.trendingQueries}
                     </div>
-                    {/* {
-                        <ul className="PopularQueriesList">
-                        <div>{fakerData.trendingQueries}</div>
-                        </ul>
-                      }
-                      {
-                        <ul className="PopularQueriesList">
-                        <div>{fakerData.trendingQueries}</div>
-                        </ul>
-                      } */}
+
                   </div>
                 </div>
               </div>
             </div>
           )}
+          
         </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export {App};
