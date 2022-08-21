@@ -123,19 +123,9 @@ function App() {
                   <div className="PopularSuggestionTag">PopularSuggestions</div>
                   <div className="PopularQueries">
                     <div className="TrendingQueriesStyle">
-                      {fakerData.trendingQueries}
-                    </div>
-                    <div className="TrendingQueriesStyle">
-                      {fakerData.trendingQueries}
-                    </div>
-                    <div className="TrendingQueriesStyle">
-                      {fakerData.trendingQueries}
-                    </div>
-                    <div className="TrendingQueriesStyle">
-                      {fakerData.trendingQueries}
-                    </div>
-                    <div className="TrendingQueriesStyle">
-                      {fakerData.trendingQueries}
+                      {
+                        fakerData.trendingQueries.map((el)=> <div>{el}</div>)
+                      }
                     </div>
                   </div>
                 </div>

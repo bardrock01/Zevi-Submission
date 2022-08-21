@@ -183,6 +183,11 @@ body {
   position: relative;
   bottom: 2%;
   top: -10%;
-  left: 53%;
+  left: 47%;
   color: rgb(206, 200, 37);
+}
+.OriginalPrice, .DiscountedPrice, .RatingStars{
+  position: relative;
+  right: 3%;
+  bottom: 10%;
 }
