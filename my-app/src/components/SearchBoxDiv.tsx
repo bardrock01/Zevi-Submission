@@ -1,5 +1,8 @@
 import react from "react"
 import {useState} from "react";
+import emptyHeart from "../assets/img/icons8-favorite-60.png"
+import fillHeart from "../assets/img/icons8-heart-60.png"
+// import fillHeart from "../assets/img/"
 // import Data from "./Data";
 // type SearchBoxDivPropTypes = {
 //     fakerData : any;
@@ -7,6 +10,7 @@ import {useState} from "react";
 const SearchBoxDiv = (props : any) => {
     const checkList = ["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"];
     const [checked, setChecked] = useState<any>([]);
+    const [fav, setFav] = useState(true);
     const handleCheck = (event:any) => {
         var updatedList = [...checked];
         if (event.target.checked) {
@@ -37,13 +41,12 @@ const SearchBoxDiv = (props : any) => {
               </div>
               <div className="ImagesToRender">
                 <div className="ImageContainer">
-                    
-                   
                     {
                         props.fakerData.productData.map((element: any, index: number) => (
-                            <div key={index}>
+                            <div className= "ProductContainer" key={index}>
                               <img src={element.imgUrl} className="ProductImages" alt="Not Found" />
-                              <div className="Product-Name-Images">{element.name}</div>
+                              <div className="Product-Name-Images">{element.productName}</div>
+                              <img className ="HeartContainer" src ={fav ? emptyHeart : fillHeart} alt="brokenHeart" onClick={()=>setFav(!fav)}/>
                         </div>
                     ))
                 };
