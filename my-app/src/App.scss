@@ -109,3 +109,15 @@ body {
   margin-top: 2%;
   font-size: larger;
 }
+.ButtonAndSearchBar{
+  display: flex;
+  flex-direction: row;
+}
+.search{
+  border: none;
+  width: 100%;
+}
+.ButtonClickMe{
+  border: none;
+  border-radius: 20px;
+}
