@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./App.scss";
 import { faker } from "@faker-js/faker";
 import AppLogo from "./components/AppLogo";
+import SearchBoxDiv from "./components/SearchBoxDiv"
 
 type FakerDataType = {
   trendingQueries: string[];
@@ -16,7 +17,7 @@ type TrendingProducts = {
 function App() {
   const [query, setQuery] = useState("");
   const [boolChildWindow, setboolChildWindow] = useState(false);
-  const [fakeUrl, setFakeUrl] = useState("");
+  const [boolOnClick, setBoolOnClick] = useState(false);
   const [fakerData, setFakerData] = useState<FakerDataType>({
     trendingProducts: [],
     trendingQueries: [],
@@ -69,9 +70,11 @@ function App() {
               placeholder="Search"
               className="search"
               onClick={() => setboolChildWindow(!boolChildWindow)} //Activating the trending div
-              onChange={(e) => setQuery(e.target.value)} //Taking the input query
+              onChange={(e) => setQuery(e.target.value) } //Taking the input query
             ></input>
-            <button className="ButtonClickMe">Clik Me</button>
+            <button className="ButtonClickMe" onClick={()=>{
+              setBoolOnClick(!boolOnClick)}}>Clik Me</button>
+              
           </div>
           {boolChildWindow && (
             <div className="OverlayFather">
@@ -109,6 +112,11 @@ function App() {
             </div>
           )}
         </div>
+       {boolOnClick &&( !boolChildWindow && (
+       <div className="SearchBoxContainer">
+        <SearchBoxDiv/>
+     </div>
+       ))}
       </div>
     </div>
   );
