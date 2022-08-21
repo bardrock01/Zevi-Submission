@@ -38,16 +38,16 @@ body {
   height: 20px;
   width: 20px;
 }
-.OverlayFather{
-    height: 65%;
-    width: 60%;
-    background-color: white ;
-    border-color: black;
-    margin : 10px;
-    //Added shadow sizing
-    -webkit-box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
--moz-box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
-box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
+.OverlayFather {
+  height: 65%;
+  width: 60%;
+  background-color: white;
+  border-color: black;
+  margin: 10px;
+  //Added shadow sizing
+  -webkit-box-shadow: -1px 4px 47px 11px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 4px 47px 11px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 4px 47px 11px rgba(0, 0, 0, 0.45);
 }
 
 .trending-products-container {
@@ -56,33 +56,31 @@ box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
   justify-content: space-evenly;
   flex-wrap: nowrap;
   margin-top: 2%;
-
 }
-.ProductName {  
+.ProductName {
   width: 100px;
   height: fit-content;
   font-size: small;
 }
-.LatestTrendsTag{
+.LatestTrendsTag {
   padding-top: 21px;
   margin-left: 39px;
-  font-family: ariel,sans-serif;
+  font-family: ariel, sans-serif;
   font-size: larger;
   font-weight: bold;
 }
-.PopularQueries{
+.PopularQueries {
   height: 151px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   margin-left: 40px;
 }
-.TrendingQueriesStyle{
+.TrendingQueriesStyle {
   font-size: small;
   font-weight: 100;
-  
 }
-.PopularSuggestionTag{
+.PopularSuggestionTag {
   padding-left: 38px;
   margin-top: 2%;
   font-size: larger;

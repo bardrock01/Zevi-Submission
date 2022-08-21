@@ -73,33 +73,37 @@ function App() {
             className="search"
             onClick={() => setboolChildWindow(!boolChildWindow)}
           ></input>
-          {
-            boolChildWindow && 
-              <div className="OverlayFather">
-                <div className="OverlayDiv">
-                  <div className="LatestTrendsTag">Latest Trends</div>
-                  <div className="trending-products-container">
-                    {
-                      fakerData.trendingProducts.map((element, index) => 
-                        <div key={index}>
-                          <img src={element.imgUrl} className = "ProductName"/>
-                          <div className="ProductName">{element.name}</div>
-                        </div>
-                        )
-                    }
-                  </div>
-                  <div className="Popular-Suggestion">
-                    <div className="PopularSuggestionTag">
-                      PopularSuggestions
+          {boolChildWindow && (
+            <div className="OverlayFather">
+              <div className="OverlayDiv">
+                <div className="LatestTrendsTag">Latest Trends</div>
+                <div className="trending-products-container">
+                  {fakerData.trendingProducts.map((element, index) => (
+                    <div key={index}>
+                      <img src={element.imgUrl} className="ProductName" alt="No data Recieved" />
+                      <div className="ProductName">{element.name}</div>
                     </div>
-                    <div className="PopularQueries">
-                      
-                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
-                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
-                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
-                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
-                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
-                      {/* {
+                  ))}
+                </div>
+                <div className="Popular-Suggestion">
+                  <div className="PopularSuggestionTag">PopularSuggestions</div>
+                  <div className="PopularQueries">
+                    <div className="TrendingQueriesStyle">
+                      {fakerData.trendingQueries}
+                    </div>
+                    <div className="TrendingQueriesStyle">
+                      {fakerData.trendingQueries}
+                    </div>
+                    <div className="TrendingQueriesStyle">
+                      {fakerData.trendingQueries}
+                    </div>
+                    <div className="TrendingQueriesStyle">
+                      {fakerData.trendingQueries}
+                    </div>
+                    <div className="TrendingQueriesStyle">
+                      {fakerData.trendingQueries}
+                    </div>
+                    {/* {
                         <ul className="PopularQueriesList">
                         <div>{fakerData.trendingQueries}</div>
                         </ul>
@@ -109,12 +113,11 @@ function App() {
                         <div>{fakerData.trendingQueries}</div>
                         </ul>
                       } */}
-                    </div>
-
                   </div>
+                </div>
               </div>
-             </div>       
-          }
+            </div>
+          )}
         </div>
       </div>
     </div>
