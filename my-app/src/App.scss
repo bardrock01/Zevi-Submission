@@ -154,3 +154,16 @@ body {
   height: 100%;
   border-width: 1px;
 }
+.ListContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.Rating{
+  margin-top : 2%;
+  margin-left: 2%;
+}
+.ImageContainer{
+  display: flex;
+  flex-direction: row;
+}

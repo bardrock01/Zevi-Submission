@@ -5,6 +5,7 @@ import { faker } from "@faker-js/faker";
 import AppLogo from "./components/AppLogo";
 import SearchBoxDiv from "./components/SearchBoxDiv"
 
+
 type FakerDataType = {
   trendingQueries: string[];
   trendingProducts: TrendingProducts[];
@@ -27,7 +28,7 @@ function App() {
     let newFakerData: any = {};
     const TrendingQueries: string[] = [];
 
-    const SIZE_OF_TRENDING_QUERIES = 1;
+    const SIZE_OF_TRENDING_QUERIES = 5;
 
     for (let i = 0; i < SIZE_OF_TRENDING_QUERIES; i++)
       TrendingQueries.push(faker.commerce.productName());
@@ -46,7 +47,36 @@ function App() {
 
     newFakerData.trendingProducts = TrendingProducts;
 
+    const ProductData : any = [];
+    for (let i = 0; i < 20; i++) {
+      const imgUrl : string = faker.image.people(300, 400);
+      const productName : string = faker.commerce.productName();
+      // Hard-coded the value for demo purposes
+      const currencyPrefix : string = 'Rs.';
+      const originalPrice : string = faker.commerce.price(100, 5000);
+      const discountedPrice : string =
+        faker.commerce.price(100, Number(originalPrice));
+      const rating =
+        Math.round(Math.random() * (5 - 1) + 1);
+      const noOfReviews = Math.floor(Math.random() * 1000 + 1);
+      const isFavourite = false;
+      const setDisplayActive = true;
+  
+      ProductData.push({
+        imgUrl: imgUrl,
+        productName: productName,
+        currencyPrefix: currencyPrefix,
+        originalPrice: originalPrice,
+        discountedPrice: discountedPrice,
+        rating: rating,
+        noOfReviews: noOfReviews,
+        isFavourite: isFavourite,
+      });
+    };
+    newFakerData.productData = ProductData;
     setFakerData(newFakerData);
+
+
   };
 
   useEffect(() => {
@@ -55,10 +85,11 @@ function App() {
 
   // const fakerData = Faker();
   // console.log(boolChildWindow);
-  // console.log(fakerData);
-  console.log(query);
+  console.log(fakerData);
+  // console.log(query);
   return (
     <div className="App">
+      {/* <Data/> */}
       <div className="main">
         <div className="ZeviName">
           <AppLogo />
