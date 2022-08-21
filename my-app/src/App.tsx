@@ -48,8 +48,8 @@ function App() {
     newFakerData.trendingProducts = TrendingProducts;
 
     const ProductData : any = [];
-    for (let i = 0; i < 20; i++) {
-      const imgUrl : string = faker.image.people(300, 400);
+    for (let i = 0; i < 50; i++) {
+      const imgUrl : string = faker.image.people(200, 300);
       const productName : string = faker.commerce.productName();
       // Hard-coded the value for demo purposes
       const currencyPrefix : string = 'Rs.';
@@ -145,7 +145,7 @@ function App() {
         </div>
        {boolOnClick &&( !boolChildWindow && (
        <div className="SearchBoxContainer">
-        <SearchBoxDiv/>
+        <SearchBoxDiv fakerData={fakerData}/>
      </div>
        ))}
       </div>

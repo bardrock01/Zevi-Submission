@@ -137,8 +137,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 100%;
-  
- 
+  overflow: scroll;
 }
 .FilterFunction{
   border-color: black;
@@ -166,4 +165,12 @@ body {
 .ImageContainer{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
+}
+.ProductImages{
+  border-radius: 2px;
+  border-width: 1px;
+  border-color: black;
 }

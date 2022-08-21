@@ -1,10 +1,10 @@
 import react from "react"
 import {useState} from "react";
-import Data from "./Data";
+// import Data from "./Data";
 // type SearchBoxDivPropTypes = {
 //     fakerData : any;
 // };
-const SearchBoxDiv = () => {
+const SearchBoxDiv = (props : any) => {
     const checkList = ["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"];
     const [checked, setChecked] = useState<any>([]);
     const handleCheck = (event:any) => {
@@ -39,14 +39,14 @@ const SearchBoxDiv = () => {
                 <div className="ImageContainer">
                     
                    
-                    {/* {
-                        props.fakerData.trendingProducts.map((element: any, index: number) => (
+                    {
+                        props.fakerData.productData.map((element: any, index: number) => (
                             <div key={index}>
                               <img src={element.imgUrl} className="ProductImages" alt="Not Found" />
                               <div className="Product-Name-Images">{element.name}</div>
                         </div>
                     ))
-                }; */}
+                };
                 </div>
                 </div>  
         </div>
