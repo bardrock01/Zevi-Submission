@@ -77,13 +77,13 @@ function App() {
             boolChildWindow && 
               <div className="OverlayFather">
                 <div className="OverlayDiv">
-                  <div>Latest Trends</div>
+                  <div className="LatestTrendsTag">Latest Trends</div>
                   <div className="trending-products-container">
                     {
                       fakerData.trendingProducts.map((element, index) => 
                         <div key={index}>
-                          <img src={element.imgUrl}/>
-                          <div className="chutiya">{element.name}</div>
+                          <img src={element.imgUrl} className = "ProductName"/>
+                          <div className="ProductName">{element.name}</div>
                         </div>
                         )
                     }
