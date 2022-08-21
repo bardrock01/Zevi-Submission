@@ -73,22 +73,24 @@ function App() {
             className="search"
             onClick={() => setboolChildWindow(!boolChildWindow)}
           ></input>
-          {boolChildWindow ? (
-            <div className="OverlayFather">
-              <div className="OverlayDiv">
-                {fakerData.trendingProducts.map((ele, index) => {
-                  return (
-                    <div className="TrendingImageContainer">
-                      <div className="ImageProductNameContainer">
-                        <img src={ele.imgUrl} className="Images" alt="Hello" />
-                        <h3>{ele.name}</h3>
-                      </div>
-                    </div>
-                  );
-                })}
+          {
+            boolChildWindow && 
+              <div className="OverlayFather">
+                <div className="OverlayDiv">
+                  <div>Latest Trends</div>
+                  <div className="trending-products-container">
+                    {
+                      fakerData.trendingProducts.map((element, index) => 
+                        <div key={index}>
+                          <img src={element.imgUrl}/>
+                          <div className="chutiya">{element.name}</div>
+                        </div>
+                        )
+                    }
+                  </div>
               </div>
-            </div>
-          ) : null}
+             </div>       
+          }
         </div>
       </div>
     </div>

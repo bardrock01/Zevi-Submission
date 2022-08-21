@@ -40,7 +40,7 @@ body {
 }
 .OverlayFather{
     height: 65%;
-    width: 45%;
+    width: 60%;
     background-color: white ;
     border-color: black;
     margin : 10px;
@@ -49,15 +49,37 @@ body {
 -moz-box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
 box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
 }
-.TrendingImageContainer{
-    display: flex;
-    flex-direction: column;
-    width: 110px;
-    height: 160px;
-    
-}
+// .TrendingImageContainer{
+   
+//     display: flex;
+//     flex-direction: column;
+//     width: 100px;
+//     height: 160px;
+
+// }
+// h4{
+//     width: fit-content;
+// }
+// .ImageAndProducts{
+//     height: fit-content;
+//     width: fit-content;
+// }
 .OverlayDiv{
-    padding-top: 10%;
-    display: flex;
+
+    // display: flex;
     justify-content: space-evenly;
+}
+
+.trending-products-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.trending-products-container div {
+    margin: 20px;
+}
+
+.chutiya {
+    overflow-wrap: break-word;
 }
