@@ -47,6 +47,7 @@ const SearchBoxDiv = (props : any) => {
                               <img src={element.imgUrl} className="ProductImages" alt="Not Found" />
                               <div className="Product-Name-Images">{element.productName}</div>
                               <img className ="HeartContainer" src ={fav ? emptyHeart : fillHeart} alt="brokenHeart" onClick={()=>setFav(!fav)}/>
+                              <span className="RatingProducts">{element.noOfReviews}</span>
                         </div>
                     ))
                 };
