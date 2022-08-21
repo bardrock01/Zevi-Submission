@@ -26,7 +26,7 @@ function App() {
     let newFakerData: any = {};
     const TrendingQueries: string[] = [];
 
-    const SIZE_OF_TRENDING_QUERIES = 5;
+    const SIZE_OF_TRENDING_QUERIES = 1;
 
     for (let i = 0; i < SIZE_OF_TRENDING_QUERIES; i++)
       TrendingQueries.push(faker.commerce.productName());
@@ -87,6 +87,30 @@ function App() {
                         </div>
                         )
                     }
+                  </div>
+                  <div className="Popular-Suggestion">
+                    <div className="PopularSuggestionTag">
+                      PopularSuggestions
+                    </div>
+                    <div className="PopularQueries">
+                      
+                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
+                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
+                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
+                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
+                        <div className="TrendingQueriesStyle">{fakerData.trendingQueries}</div>
+                      {/* {
+                        <ul className="PopularQueriesList">
+                        <div>{fakerData.trendingQueries}</div>
+                        </ul>
+                      }
+                      {
+                        <ul className="PopularQueriesList">
+                        <div>{fakerData.trendingQueries}</div>
+                        </ul>
+                      } */}
+                    </div>
+
                   </div>
               </div>
              </div>       

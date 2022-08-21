@@ -49,48 +49,41 @@ body {
 -moz-box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
 box-shadow: -1px 4px 47px 11px rgba(0,0,0,0.45);
 }
-// .TrendingImageContainer{
-   
-//     display: flex;
-//     flex-direction: column;
-//     width: 100px;
-//     height: 160px;
-
-// }
-// h4{
-//     width: fit-content;
-// }
-// .ImageAndProducts{
-//     height: fit-content;
-//     width: fit-content;
-// }
-.OverlayDiv{
-
-    // // display: flex;
-    // justify-content: space-evenly;
-}
 
 .trending-products-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: nowrap;
+  margin-top: 2%;
 
 }
-
-
-
 .ProductName {  
-  // margin: auto; 
-  // overflow-wrap: break-word;
   width: 100px;
   height: fit-content;
   font-size: small;
 }
 .LatestTrendsTag{
-  padding-top: 13px;
-  margin-left: 22px;
+  padding-top: 21px;
+  margin-left: 39px;
   font-family: ariel,sans-serif;
   font-size: larger;
   font-weight: bold;
+}
+.PopularQueries{
+  height: 151px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 40px;
+}
+.TrendingQueriesStyle{
+  font-size: small;
+  font-weight: 100;
+  
+}
+.PopularSuggestionTag{
+  padding-left: 38px;
+  margin-top: 2%;
+  font-size: larger;
 }
